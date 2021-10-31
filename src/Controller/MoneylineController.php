@@ -11,8 +11,16 @@ class MoneylineController extends AbstractController
     /**
      * @Route("/moneyline", name="moneyline")
      */
-    public function index(): Response
+    public function index($favLine = 0, $dogLine = 0): Response
     {
+        $favLine = 220;
+        $dogLine = 180;
+        /*
+        return $this->redirectToRoute('amtoimpl', [
+            'favLine' => $favLine,
+            'dogLine' => $dogLine
+        ]);
+        */
         return $this->render('moneyline/index.html.twig', [
             'controller_name' => 'MoneylineController',
         ]);
@@ -20,13 +28,16 @@ class MoneylineController extends AbstractController
 
     /**
      * @Route("/americanToImplied",
-     *     name="amtoimpl")
+     *     name="amtoimpl"),
      */
     public function americanToImpliedOdds(int $favLine, int $dogLine)
     {
+        //$favLine = 220;
+        //$dogLine = 180;
+
         return $this->render("moneyline/implied_probability.html.twig", [
-           'favorite' => 0,
-           'dog' => 0,
+           'favorite' => $favLine,
+           'dog' => $dogLine,
         ]);
     }
 }
