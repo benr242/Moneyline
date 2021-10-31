@@ -17,4 +17,16 @@ class MoneylineController extends AbstractController
             'controller_name' => 'MoneylineController',
         ]);
     }
+
+    /**
+     * @Route("/americanToImplied",
+     *     name="amtoimpl")
+     */
+    public function americanToImpliedOdds(int $favLine, int $dogLine)
+    {
+        return $this->render("moneyline/implied_probability.html.twig", [
+           'favorite' => 0,
+           'dog' => 0,
+        ]);
+    }
 }
