@@ -1,0 +1,11 @@
+https://www.actionnetwork.com/education/remove-juice-vig
+
+Implied Odds
+
+Favorite: Odds / (Odds + 100) *100
+Underdog: 100 / (Odds + 100) *100
+
+Remove Juice
+
+Team A IP / (Team A IP + Team B IP)
+
