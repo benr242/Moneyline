@@ -9,12 +9,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class MoneylineController extends AbstractController
 {
     /**
-     * @Route("/moneyline", name="moneyline")
+     * @Route("/moneyline",
+     *     name="moneyline")
      */
     public function index($favLine = 0, $dogLine = 0): Response
     {
         $favLine = 220;
         $dogLine = 180;
+
         /*
         return $this->redirectToRoute('amtoimpl', [
             'favLine' => $favLine,
@@ -23,6 +25,8 @@ class MoneylineController extends AbstractController
         */
         return $this->render('moneyline/index.html.twig', [
             'controller_name' => 'MoneylineController',
+            'fl' => $favLine,
+            'dl' => $dogLine
         ]);
     }
 
