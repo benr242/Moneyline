@@ -23,10 +23,16 @@ class MoneylineController extends AbstractController
             'dogLine' => $dogLine
         ]);
         */
+
+        $fImplOdds = $favLine/($favLine + 100) * 100;
+        $dImplOdds = 100 / ($dogLine + 100) * 100;
+
         return $this->render('moneyline/index.html.twig', [
             'controller_name' => 'MoneylineController',
             'fl' => $favLine,
-            'dl' => $dogLine
+            'dl' => $dogLine,
+            'fImp' => $fImplOdds,
+            'dImp' => $dImplOdds
         ]);
     }
 
