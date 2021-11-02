@@ -12,10 +12,13 @@ class MoneylineController extends AbstractController
      * @Route("/moneyline",
      *     name="moneyline")
      */
-    public function index($favLine = 0, $dogLine = 0): Response
+    public function index(): Response
     {
         $favLine = 220;
         $dogLine = 180;
+
+        $favLine = 225;
+        $dogLine = 187;
 
         /*
         return $this->redirectToRoute('amtoimpl', [
@@ -30,6 +33,9 @@ class MoneylineController extends AbstractController
         $fOdds = $fImplOdds / ($fImplOdds + $dImplOdds);
         $dOdds = $dImplOdds / ($dImplOdds + $fImplOdds);
 
+        $test = 250;
+        $testIP = $test/($test + 100) * 100;
+
         return $this->render('moneyline/index.html.twig', [
             'controller_name' => 'MoneylineController',
             'fl' => $favLine,
@@ -37,7 +43,8 @@ class MoneylineController extends AbstractController
             'fImp' => $fImplOdds,
             'dImp' => $dImplOdds,
             'fOdds'=> $fOdds,
-            'dOdds' => $dOdds
+            'dOdds' => $dOdds,
+            'tip' => $testIP,
         ]);
     }
 
