@@ -9,6 +9,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class MoneylineController extends AbstractController
 {
     /**
+     * @Route("/",
+     *    name="home")
+     */
+    public function home()
+    {
+        return $this->redirectToRoute("moneyline");
+    }
+
+    /**
      * @Route("/moneyline",
      *     name="moneyline")
      */
@@ -17,8 +26,8 @@ class MoneylineController extends AbstractController
         $favLine = 220;
         $dogLine = 180;
 
-        $favLine = 225;
-        $dogLine = 187;
+        $favLine = 145;
+        $dogLine = 125;
 
         /*
         return $this->redirectToRoute('amtoimpl', [
